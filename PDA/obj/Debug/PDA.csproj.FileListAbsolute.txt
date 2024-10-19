@@ -54,3 +54,4 @@ F:\PDA\PDA\obj\Debug\PDA.winer.resources
 F:\PDA\PDA\obj\Debug\PDA.csproj.GenerateResource.Cache
 F:\PDA\PDA\bin\Debug\PDA.exe
 F:\PDA\PDA\bin\Debug\PDA.pdb
+F:\PDA\PDA\obj\Debug\PDA.Statistique.resources

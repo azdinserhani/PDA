@@ -45,6 +45,7 @@
             this.passwordInput.ForeColor = System.Drawing.Color.White;
             this.passwordInput.Location = new System.Drawing.Point(349, 299);
             this.passwordInput.Name = "passwordInput";
+            this.passwordInput.PasswordChar = '*';
             this.passwordInput.Size = new System.Drawing.Size(125, 22);
             this.passwordInput.TabIndex = 3;
             this.passwordInput.TextChanged += new System.EventHandler(this.passwordInput_TextChanged);

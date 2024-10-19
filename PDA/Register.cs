@@ -130,6 +130,16 @@ namespace PDA
             }
         }
 
+        private void label1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            login login = new login();
+            login.FormClosed += (s, args) => this.Close();
+            login.Show();
+        }
+
+        
+
         
 
      

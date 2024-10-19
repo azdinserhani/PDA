@@ -14,6 +14,7 @@ namespace PDA
         {
             InitializeComponent();
             ListJoueuer = SerialisationJoueur.ouvrir();
+            this.usernameInput.Focus();
         }
         
         private void loginJoueur()
@@ -133,6 +134,10 @@ namespace PDA
             registerForm.FormClosed += (s, args) => this.Close();
             registerForm.Show();
         }
+
+        
+
+       
 
        
 

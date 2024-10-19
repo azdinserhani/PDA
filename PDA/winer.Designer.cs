@@ -42,6 +42,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(130, 70);
             this.panel1.TabIndex = 0;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             this.panel1.Click += new System.EventHandler(this.panel1_Click);
             // 
             // panel2
@@ -92,6 +93,7 @@
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "winer";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "winer";
             this.Load += new System.EventHandler(this.winer_Load);
             this.ResumeLayout(false);

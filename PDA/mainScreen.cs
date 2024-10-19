@@ -73,6 +73,24 @@ namespace PDA
             login.Show();
         }
 
+        private void panel1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Statistique stat = new Statistique(curentJoueur);
+            stat.FormClosed += (s, args) => this.Close();
+            stat.Show();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel5_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
 
 
      

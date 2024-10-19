@@ -143,19 +143,37 @@ namespace PDA
             return chB;
         }
 
-          
+        private int rechercheScoreJoueur(string id)
+        {
+            int score = 0;
+            if (ListStatistic == null)
+            {
+               // MessageBox.Show("La liste des statistiques n'est pas initialisée", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return score; // Return 0 instead of null
+            }
+
+            foreach (Statistic s in ListStatistic)
+            {
+                if (s.Statistic_userId == id)
+                {
+                    score += s.Statistic_score;
+                }
+            }
+            return score;
+        }
         private void textBox2_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter) {
+            if (e.KeyCode == Keys.Enter)
+            {
                 e.SuppressKeyPress = true;
 
                 PlaySound("coins");
                 startCount += 1;
-                
-        
+
                 string bPlace = BienPlaces(int.Parse(textBox2.Text), int.Parse(randomNumber)).ToString();
                 string mPlace = MalPlaces(int.Parse(textBox2.Text), int.Parse(randomNumber)).ToString();
-                dataGridView1.Rows.Add(textBox2.Text, bPlace,mPlace);
+                dataGridView1.Rows.Add(textBox2.Text, bPlace, mPlace);
+
                 if (startCount >= nombreTentative)
                 {
                     endTime = DateTime.Now;
@@ -168,26 +186,51 @@ namespace PDA
                     loserForm.Show();
                     PlaySound("game");
                 }
-                if(textBox2.Text == randomNumber){
+
+                if (textBox2.Text == randomNumber)
+                {
+                    PlaySound("Super");
+
                     endTime = DateTime.Now;
                     TimeSpan timespan = endTime - startTime;
-                    MessageBox.Show(timespan.ToString());
-                    Statistic stat = new Statistic(currentJoueur.Joueur_id, type, timespan.ToString(), score);
-                    ListStatistic = new List<Statistic>();
-                    winer winerForm = new winer(currentJoueur,timespan.ToString(),score);
+
+                    // Retrieve the previous score for the current player
+                    int previousScore = rechercheScoreJoueur(currentJoueur.Joueur_id);
+
+                    // Add the current score to the previous score
+                    int totalScore = previousScore + score;
+
+                    // Create the statistic object with the updated score
+                    Statistic stat = new Statistic(currentJoueur.Joueur_id, type, timespan.ToString(), totalScore);
+
+                    // Update the list of statistics
+                    ListStatistic = SerialisationStatistic.ouvrir();
+                    if (ListStatistic == null) ListStatistic = new List<Statistic>();
+
+                    // Add the updated statistic to the list
+                    ListStatistic.Add(stat);
+
+                    // Save the updated statistics list
+                    SerialisationStatistic.enregistre(ListStatistic);
+
+                    winer winerForm = new winer(currentJoueur, timespan.ToString(), totalScore);
                     winerForm.FormClosed += (s, args) => this.Close();
                     winerForm.Show();
-                    ListStatistic.Add(stat);
+
                     this.Hide();
                 }
+
                 textBox2.Clear();
             }
         }
+
 
         private void playScreen_Load(object sender, EventArgs e)
         {
 
         }
+
+       
 
        
 

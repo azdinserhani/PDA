@@ -136,5 +136,40 @@ namespace PDA.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        internal static System.Drawing.Bitmap WhatsApp_Image_2024_10_18_at_23_25_45 {
+            get {
+                object obj = ResourceManager.GetObject("WhatsApp Image 2024-10-18 at 23.25.45", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap WhatsApp_Image_2024_10_19_at_01_02_40 {
+            get {
+                object obj = ResourceManager.GetObject("WhatsApp Image 2024-10-19 at 01.02.40", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap WhatsApp_Image_2024_10_19_at_01_02_40_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("WhatsApp_Image_2024-10-19_at_01.02.40-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap WhatsApp_Image_2024_10_19_at_01_06_57 {
+            get {
+                object obj = ResourceManager.GetObject("WhatsApp Image 2024-10-19 at 01.06.57", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap WhatsApp_Image_2024_10_19_at_01_11_04_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("WhatsApp_Image_2024-10-19_at_01.11.04-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
